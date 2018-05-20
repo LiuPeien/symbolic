@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 import hashlib
 import web
 import reply, receive
