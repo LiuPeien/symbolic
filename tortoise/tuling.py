@@ -16,15 +16,15 @@ class Tuling:
     def get_tuling_response(self, message):
         logger.info('get a tuling request, the message is: ' + str(message))
 
-        headers = {'Content-type': 'application/json'}
-
-        query = {'key':KEY, 'info':message.encode('utf-8')}
-
-        r = requests.get(url, params=query, headers=headers)
-
-        res = r.text
-
-        return json.loads(res).get('text').replace('<br>', '\n')
+        try:
+            headers = {'Content-type': 'application/json'}
+            query = {'key':KEY, 'info':message.encode('utf-8')}
+            r = requests.get(url, params=query, headers=headers)
+            res = r.text
+            return json.loads(res).get('text').replace('<br>', '\n')
+        except Exception as e:
+            logging.info('tuling error info: ' + str(e))
+            return '谢谢关注Symblic'
 
 
 if __name__ == '__main__':
