@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-#
 import json
 import requests
+import logging
+
+logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 url = 'http://www.tuling123.com/openapi/api'
 KEY = '44f40f88a9ea497e8b073ca6bbcc8ac2'
