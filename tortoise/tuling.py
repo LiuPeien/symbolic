@@ -17,7 +17,7 @@ class Tuling:
         logger.info('get a tuling request, the message is: ' + str(message))
 
         try:
-            headers = {'Content-type': 'application/json'}
+            headers = {'Content-type': 'text/html', 'charset': 'utf-8'}
             query = {'key':KEY, 'info':message.encode('utf-8')}
             r = requests.get(url, params=query, headers=headers)
             res = r.text
