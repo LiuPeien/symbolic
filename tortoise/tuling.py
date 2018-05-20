@@ -20,8 +20,8 @@ class Tuling:
             headers = {'Content-type': 'text/html', 'charset': 'utf-8'}
             query = {'key':KEY, 'info':message.encode('utf-8')}
             r = requests.get(url, params=query, headers=headers)
-            res = r.text
-            return json.loads(res).get('text').replace('<br>', '\n')
+            r.encoding = 'utf-8'
+            return json.loads(r.text).get('text').replace('<br>', '\n')
         except Exception as e:
             logging.info('tuling error info: ' + str(e))
             return '谢谢关注Symblic'
