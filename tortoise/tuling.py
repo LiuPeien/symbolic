@@ -17,7 +17,7 @@ class Tuling:
 
         headers = {'Content-type': 'application/json'}
 
-        query = {'key':KEY, 'info':message}
+        query = {'key':KEY, 'info':message.encode('utf-8')}
 
         r = requests.get(url, params=query, headers=headers)
 
