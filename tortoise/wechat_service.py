@@ -4,6 +4,10 @@ from flask import request
 import hashlib
 import receiver, replyer, tuling
 import logging
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
