@@ -45,7 +45,7 @@ def index():
         except Exception as e:
             logging.info('get request error: ' + str(e))
             return "error"
-    elif request.method == "POST":  # 判断请求方式是GET请求
+    elif request.method == "POST":  # 判断请求方式是POST请求
         logging.info('receive a post request')
         try:
             recData = request.get_data()

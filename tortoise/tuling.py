@@ -14,6 +14,7 @@ class Tuling:
         self
 
     def get_tuling_response(self, message):
+        logger.info('get a tuling request, the message is: ' + str(message))
 
         headers = {'Content-type': 'application/json'}
 
