@@ -1,9 +1,11 @@
-from sqlitedb import TortoiseDB
+# -*- coding: utf-8 -*-
 import urllib
 import time
 import json
 import config
 import datetime
+from db.sqlitedb import TortoiseDB
+
 
 class Token:
     def __init__(self):

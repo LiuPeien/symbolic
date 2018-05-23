@@ -1,6 +1,6 @@
+# -*- coding: utf-8 -*-
 import sqlite3
-
-import config
+from common import config
 
 class TortoiseDB:
     def __init__(self):

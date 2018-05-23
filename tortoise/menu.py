@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 import urllib
-from access_token import Token
+from common.access_token import Token
 
 class Menu(object):
     def __init__(self):
