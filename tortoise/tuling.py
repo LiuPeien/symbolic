@@ -3,8 +3,7 @@ import json
 import requests
 import logging
 
-logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('root')
 
 url = 'http://www.tuling123.com/openapi/api'
 KEY = '44f40f88a9ea497e8b073ca6bbcc8ac2'
@@ -24,7 +23,7 @@ class Tuling:
             return json.loads(r.text).get('text').replace('<br>', '\n')
         except Exception as e:
             logging.info('tuling error info: ' + str(e))
-            return '谢谢关注Symblic'
+            return '你好'
 
 
 if __name__ == '__main__':

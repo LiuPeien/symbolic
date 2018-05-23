@@ -3,14 +3,15 @@ from flask import Flask
 from flask import request
 import hashlib
 import receiver, replyer, tuling
+from logging.config import fileConfig
 import logging
 import sys
 
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+logging.config.fileConfig('common/logging.conf')
+logger = logging.getLogger('root')
 
 app = Flask(__name__)
 
@@ -48,7 +49,7 @@ def index():
                 return ""
         except Exception as e:
             logging.info('get request error: ' + str(e))
-            return "error"
+            return ""
     elif request.method == "POST":  # 判断请求方式是POST请求
         logging.info('receive a post request')
         try:
@@ -75,9 +76,9 @@ def index():
                 return replyer.Msg().send()
         except Exception as e:
             logging.info('post request error: ' + str(e))
-            return "error"
+            return ""
     else:
-        return 'error'
+        return ""
 
 
 if __name__ == "__main__":
